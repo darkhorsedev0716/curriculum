@@ -23,13 +23,13 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'そうしのまくら',
+            'name' => 'やまだ',
             'email' => 'test2@test.com',
             'password' => Hash::make('test'),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'そうしのまくら',
+            'name' => 'たかはし',
             'email' => 'test3@test.com',
             'password' => Hash::make('test'),
         ]);
