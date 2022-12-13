@@ -36,7 +36,6 @@ class HomeController extends Controller
         $form = $request->all();
 
         $posts->body = $form['body'];
-        $posts->book = $form['book'];
         $posts->user_id = Auth::id();
         $posts->save();
 

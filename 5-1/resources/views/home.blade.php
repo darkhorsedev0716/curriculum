@@ -14,16 +14,6 @@
                     
                     <div class="title">
                         {{ __('Mutter') }}
-                        <div class="">
-                            <select class="article-books">
-                                <option value="たきじい">たきじい</option>
-                                <option value="そうしのまくら">そうしのまくら</option>
-                                <option value="あくたの龍ちゃん">あくたの龍ちゃん</option>
-             >
-
-                            </select>
-
-                        </div>
                     </div>
                 </div>
 
@@ -51,7 +41,7 @@
                             @foreach($articles as $article)
                                 <div class="article-item">
                                     <div class="article-header">
-                                        <B>{{ $article->book}}</B>
+                                        <B>{{ $article->user->name}}</B>
                                         <span> {{ $article->updated_at}}</span>
                                     </div>
                                     <div class="article-content">
@@ -91,7 +81,6 @@
         $('.add').click(function(e){
             var _token = $('input[name="_token"]').val();
             var body = $('input[name="body"]').val();
-            var book = $('.article-books').val();
 
             if(body.length == 0 || body.length > 255){
                 alert('テキストは正しく入れてください。');
@@ -102,7 +91,6 @@
                 type: 'POST',
                 data: {
                     'body': body,
-                    'book': book,
                     '_token': _token
                 },
                 url: '/article',

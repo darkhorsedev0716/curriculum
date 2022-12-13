@@ -17,7 +17,6 @@ return new class extends Migration
             $table->increments('id');
             $table->bigInteger('user_id')->nullable(true);
             $table->string('body', 255)->nullable(true);
-            $table->string('book', 255)->nullable(true);
             $table->timestamps();
             $table->softDeletes();
         });
